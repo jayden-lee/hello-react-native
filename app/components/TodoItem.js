@@ -6,23 +6,28 @@ import {
   Dimensions,
   TouchableOpacity
 } from "react-native";
-import { AntDesign } from "@expo/vector-icons";
+import { AntDesign, FontAwesome } from "@expo/vector-icons";
 
-const TodoItem = ({text}) => (
+const TodoItem = ({ text, isComplete, changeComplete, deleteItem }) => (
   <View style={styles.todoContainer}>
     <View>
       <View style={styles.lineContainer}>
         <View style={styles.makerow}>
-          <TouchableOpacity>
-            <AntDesign name="checkcircle" size={20} />
+          <TouchableOpacity onPress={changeComplete}>
+            <FontAwesome
+              name={isComplete ? "circle-o" : "check-circle"}
+              size={20}
+              style={styles.checkbtn}
+            />
           </TouchableOpacity>
-
+          {/* <TouchableOpacity>
+            <AntDesign name="checkcircle" size={20} style={styles.checkbtn} />
+          </TouchableOpacity> */}
           <Text style={styles.todoitem}>{text}</Text>
-
-          <TouchableOpacity>
-            <AntDesign name="closecircle" size={20} />
-          </TouchableOpacity>
         </View>
+        <TouchableOpacity onPress={deleteItem}>
+          <AntDesign name="closecircle" size={20} />
+        </TouchableOpacity>
       </View>
     </View>
   </View>
@@ -46,7 +51,7 @@ const styles = StyleSheet.create({
     alignItems: "center"
   },
   checkbtn: {
-    marginRight: 20
+    marginRight: 10
   },
   makerow: {
     flexDirection: "row"
