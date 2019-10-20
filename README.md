@@ -34,3 +34,12 @@ npm start
 
 ![rn-todo-app](https://user-images.githubusercontent.com/43853352/67111265-86b5bf80-f20f-11e9-8a3a-cd80a7e4ade8.png)
 
+### Weather App
+
+```
+git clone https://github.com/jayden-lee/hello-react-native.git
+git checkout weather-app
+npm start
+```
+
+![weather-app](https://user-images.githubusercontent.com/43853352/67155186-48222100-f345-11e9-875a-407f680b2e18.jpeg)
