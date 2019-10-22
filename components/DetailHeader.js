@@ -4,7 +4,7 @@ import { withNavigation } from "react-navigation";
 import { Ionicons } from "@expo/vector-icons";
 const { width, height } = Dimensions.get("window");
 
-const DetailHeader = ({ navigation }) => {
+const DetailHeader = ({ navigation, deleteProp }) => {
   return (
     <View style={styles.container}>
       <TouchableOpacity
@@ -19,8 +19,13 @@ const DetailHeader = ({ navigation }) => {
         <TouchableOpacity hitSlop={{ top: 2, bottom: 2, left: 2, right: 2 }}>
           <Ionicons name="ios-image" size={25} />
         </TouchableOpacity>
-        <TouchableOpacity hitSlop={{ top: 2, bottom: 2, left: 2, right: 2 }}>
-          <Ionicons name="ios-save" size={25} />
+        <TouchableOpacity
+          hitSlop={{ top: 2, bottom: 2, left: 2, right: 2 }}
+          onPress={() => {
+            deleteProp();
+          }}
+        >
+          <Ionicons name="ios-close" size={25} color={"#7a7171"} />
         </TouchableOpacity>
       </View>
     </View>

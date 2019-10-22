@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, StyleSheet, View } from "react-native";
+import { Text, StyleSheet, View, Image } from "react-native";
 import { SafeAreaView } from "react-navigation";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import NullPage from "../components/NullPage";
@@ -18,16 +18,26 @@ export default class DetailScreen extends React.Component {
 
   post = this.props.navigation.getParam("post");
 
+  _deletesignal = () => {
+    this.props.navigation.navigate("MainScreen", { signal: this.post.id });
+  };
+
   render() {
     return (
       <SafeAreaView style={styles.container}>
         <View style={styles.contentContainer}>
-          <DetailHeader />
+          <DetailHeader deleteProp={this._deletesignal} />
           {this.post ? (
             <View>
               <View style={styles.detailbox}>
                 <Text style={styles.detailtitle}>제목 : {this.post.title}</Text>
               </View>
+              {this.post.imageUri ? (
+                <Image
+                  source={{ uri: this.post.imageUri }}
+                  style={{ width: 100, height: 100 }}
+                />
+              ) : null}
               <View style={styles.detailbox}>
                 <Text style={styles.detailcontent}>
                   내용 : {this.post.content}

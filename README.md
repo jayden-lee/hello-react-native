@@ -41,7 +41,16 @@ git clone https://github.com/jayden-lee/hello-react-native.git
 git checkout weather-app
 npm start
 ```
-D
+
 ![weather-app](https://user-images.githubusercontent.com/43853352/67155186-48222100-f345-11e9-875a-407f680b2e18.jpeg)
 
 ### Diary App
+
+```
+git clone https://github.com/jayden-lee/hello-react-native.git
+git checkout diary-app
+npm start
+```
+
+
+![diary-app](https://user-images.githubusercontent.com/43853352/67307891-2dfa6580-f534-11e9-9db9-6da842cd19d4.png)
